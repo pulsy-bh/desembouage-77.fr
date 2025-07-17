@@ -1,0 +1,67 @@
+<div class="pre-reservation">
+    <h3>Votre ambulance en quelques clics </h3>
+    <form method="post" id="devisForm" action="{{ site.data.company.url.notify }}">
+        <input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
+        <input type="hidden" name="type" value="devis" />
+        <input type="hidden" name="website" value="{{ site.data.company.website }}" />
+        <input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+        <input type="hidden" name="condition" value="on" />
+        <input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 clabel">
+                <div class="form-group has-feedback ico1">
+                    <input type="text" name="name" style="padding-left: 20px;" class="form-control" placeholder="Nom"
+                        required>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  clabel">
+                <div class="form-group has-feedback ico2">
+                    <input type="tel" name="telephone" style="padding-left: 25px;" class="form-control"
+                        placeholder="Téléphone" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 clabel ">
+                <div class="padl form-group has-feedback ico3">
+                    <input type="email" style="padding-left: 30px;" name="email" class="form-control"
+                        placeholder="E-mail" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input type="date" name="date-prise-en-charge" class="form-control"
+                        placeholder="Date de la prise en charge" required>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input type="time" name="heure-prise-en-charge" class="form-control" placeholder="Heure">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group has-feedback ico4">
+                    <textarea name="message" style="padding-left: 30px;" class="form-control" rows="4"
+                        placeholder="Message"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}">
+                    </div>
+                    <br />
+                    <div id="devis-form-response" class="text-white" style="color: #000 !important; font-size: 1rem;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <input id="btSubmit" class="button" type="submit" value="Envoyer">
+            </div>
+        </div>
+        
+        <br>
+    </form>
+</div>

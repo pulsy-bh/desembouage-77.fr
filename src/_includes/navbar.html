@@ -1,0 +1,43 @@
+<nav class="">
+    <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="">
+                <li><a class="{% if page.url == '/' %}active{% endif %}" href="{{ site.baseurl }}/">Accueil</a> </li>
+            
+              
+
+              <li>
+                <a class="{% if page.url == '/notre-entreprise' %}active{% endif %}" href="{{ site.baseurl }}/notre-entreprise">   Notre entreprise  </a>
+              </li>
+
+              <li>
+                <a class="{% if page.url == '/nos-services' %}active{% endif %}" href="{{ site.baseurl }}/nos-services">   Nos services  </a>
+              </li>
+
+              <li>
+                <a class="{% if page.url == '/zone-d-intervention' %}active{% endif %}" href="{{ site.baseurl }}/zone-d-intervention"> Zone d'intervention </a>
+              </li>
+              
+              <li>
+                <a class="{% if page.url == '/contact' %}active{% endif %}" href="{{ site.baseurl }}/contact"> Nous contacter  </a>
+              </li>
+
+              <li class="devis">
+                <a class="{% if page.url == '/reservation' %}active{% endif %} button" href="{{ site.baseurl }}/reservation">Réserver en ligne </a>
+              </li>
+                
+             <!--  <li class=" hidden-xs "><a href="tel:<?=$call_phone1?>" class="button-phone"><i class="fa fa-phone" aria-hidden="true"></i> <?=$conf_phone1?></a>
+              </li> -->
+          </ul>
+      </div>
+</nav>
+<!-- <div class="phone visible-xs text-center">
+<a href="tel:<?=$call_phone1?>" class="button-phone"><i class="fa fa-phone" aria-hidden="true"></i> <?=$conf_phone1?></a>
+</div> -->

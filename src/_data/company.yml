@@ -1,0 +1,75 @@
+####################
+# CONFIG
+####################
+name: "Action Ambulance"
+streetAddress: "80 rue Charles Fourier"
+addressLocality: "Vitry Sur Seine"
+addressRegion: "Ile-de-France"
+postalCode: "94400"
+addressCountry: "France"
+url: "https://www.ambulance-94.com/"
+logo: "https://www.ambulance-94.com/img/logo.jpg"
+image: "https://www.ambulance-94.com/img/ambulance_vitry.jpg"
+description: "Notre entreprise spécialisée dans les services ambulanciers dans le 94 est à votre disposition pour tout transport sanitaire que ce soit en urgence ou non. Qu'il s'agisse d'une consultation médicale, d'un transport opérationnel ou d'une prise en charge, nos ambulanciers est prête à vous aider pour tous vos besoins."
+phone1: "01 85 53 70 44"
+phone2: "06 61 61 61 61"
+phones:
+    - "01 85 53 70 44"
+    - "06 61 61 61 61"
+address:
+    street: "80 rue Charles Fourier"
+    city: "Vitry Sur Seine"
+    postalCode: "94400"        
+    geo:
+        latitude: "48.80°N"
+        longitude: "2.40°E"
+    openingHours: "Mo, Tu, We, Th, Fr, Sa, Su 01:00-23:30"
+    contactPoint:
+        telephone: "01 85 53 70 44"
+        contactType: "téléphone"
+conf_name: "Action Ambulance"
+conf_address: "80 rue Charles Fourier"
+conf_zipCode: "94400 "
+conf_city: "Vitry Sur Seine "
+conf_googleMap: ""
+
+call_phone1: "01 85 53 70 44"
+conf_phone1: "0185537044"
+
+conf_phone2: ""
+conf_fax: "01 00 00 00 00"
+
+conf_id_company: 430
+conf_name_website: "ambulance-94.com"
+conf_addressOnline: "http://www.ambulance-94.com/"
+
+conf_email: "actionambulances@gmail.com"
+email: "actionambulances@gmail.com"
+conf_email_copie: "hedi@bhgroupe.fr"
+conf_email_copie2: "hind@bhgroupe.fr;adrien@bhgroupe.fr"
+
+# Formulaires
+conf_email_formulaire1: $conf_email;
+conf_email_formulaire2: null;
+
+# Mentions Légales
+conf_owner: $conf_name
+conf_capital: "20000"
+conf_headOffice: $conf_address." ".$conf_zipCode." ".$conf_city
+conf_rcs: "Paris B 123 456 789"
+conf_comDirector: "Prénom NOM"
+ovh: "<h2>OVH</h2>Société par actions simplifiée au capital de 10 000 000 €,<br>Dont le siège social est établi 2, rue Kellermann 59100 Roubaix<br>Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS Tourcoing 424 761 419"
+gandi: "<h2>Gandi</h2>Société par actions simplifiée au capital 300 000 €,<br>Dont le siège social est établi 63 Boulevard Massena 75013 Paris<br>Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS Paris B 423 093 459"
+conf_hebergement: $gandi
+
+websiteAddr: ambulance-94.com
+website: 218
+
+recaptcha:
+  client: 6LchFn0rAAAAAL_VxfSX2yBQSYD7Yn49aUP5hmvV
+  server: 6LchFn0rAAAAAKFrn1VIDpW4PKr5sYOCbwN8vOYd
+  
+lang: fr
+url:
+  notify: 'https://jgviaboye9.execute-api.eu-west-3.amazonaws.com/prod/notify'
+  redirect: '/message-envoye'
