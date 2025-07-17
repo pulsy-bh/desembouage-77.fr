@@ -19,17 +19,16 @@ addressOnline: "http://www.desembouage-77.fr/"
 email: "contact@desembouage-77.fr"
 emailCopie: "hind@bhgroupe.fr"
 
-emailFormulaire1: $conf_email
+emailFormulaire1: "{{ site.data.company.email }}"
 emailFormulaire2: null
 
-owner: $conf_name
+owner: "Desembouage 77"
 capital: "20000"
-headOffice: $conf_address." ".$conf_zipCode." ".$conf_city
+headOffice: "19 rue Pierre Brossolette 91700 Sainte Geneviève des Bois"
 rcs: "Paris B 123 456 789"
 comDirector: "Philippe DOS SANTOS"
 ovh: "<h2>OVH</h2>Société par actions simplifiée au capital de 10 000 000 €,<br>Dont le siège social est établi 2, rue Kellermann 59100 Roubaix<br>Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS Tourcoing 424 761 419"
-gandi: "<h2>Gandi</h2><p>Société par actions simplifiée au capital 300 000 €,<br>Dont le siège social est établi 63 Boulevard Massena 75013 Paris<br>Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS Paris B 423 093 459</p>"
-hebergement: $gandi
+hebergement: "<h2>Gandi</h2><p>Société par actions simplifiée au capital 300 000 €,<br>Dont le siège social est établi 63 Boulevard Massena 75013 Paris<br>Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS Paris B 423 093 459</p>"
 
 websiteAddr: desembouage-77.fr
 website: 
