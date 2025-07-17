@@ -1,0 +1,78 @@
+---
+layout: default
+permalink: /avis
+title: "Les avis de nos clients sur nos interventions de désembouage"
+description: "Laissez nous un avis ! Vos critiques seront toujours bénéfiques pour notre amélioration alors l'équipe SPC
+vous remercie pour le temps que vous y accordez"
+---
+
+<section class="mini-slider wow fadeIn" data-wow-duration="1s" data-wow-delay="0">
+    <h1>Avis clients</h1>
+</section>
+
+<section class="one">
+    <div class="container">
+        <form class="" method="POST" action="" role="form">
+            <div class="form">
+                <label class="control-label">Nom</label><br>
+                <input type="texte" class="form-control" name="nom" placeholder="Nom">
+            </div>
+            <div class="form">
+                <label class="control-label">Note</label><br>
+                <select name="note" class="form-control">
+                    {% for i in (1..5) reversed %}
+                        <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form">
+                <label class="control-label">Commentaire</label><br>
+                <textarea name="message" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form">
+                <button type="submit" class="button1" name="submit"><span class="txt">Envoyer</span></button>
+            </div>
+        </form>
+
+        <div class="separator"></div>
+        <h2><strong>Les avis de nos clients</strong></h2>
+
+        <div class="qa-message-list" id="wallmessages">
+            <div class="message-item" id="m1">
+                <div class="message-inner">
+                    <div class="message-head clearfix">
+                        <div class="user-detail">
+                            <h3 class="handle">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                - <strong>Cécile L</strong>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="qa-message-content">Rapide, très agréable et par dessus tout du bon travail. Merci Monsieur Santos :)</div>
+                </div>
+            </div>
+
+            <div class="message-item" id="m2">
+                <div class="message-inner">
+                    <div class="message-head clearfix">
+                        <div class="user-detail">
+                            <h3 class="handle">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                - <strong>Boyer</strong>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="qa-message-content">Desembouage du chauffage fait, personne sympa, bon travail content de la prestation.<br>Je recommande.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

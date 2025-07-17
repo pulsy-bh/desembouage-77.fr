@@ -1,81 +1,69 @@
 ---
 layout: default
 permalink: /contact
-title: "Contactez-nous pour un déplacement en l'Île-de-France"
-description: "Besoin d'un service d'ambulance ? Contactez-nous dès maintenant pour une assistance médicale rapide et
-professionnelle. Votre santé compte pour nous !"
+title: "Contactez SPC 77 par mail, sur notre numéro ou directement en agence"
+description: "Contactez-nous directement via notre formulaire de contact en ligne ou au 06 03 69 37 03. Notre équipe vous répondra rapidement pour analyser votre besoin."
 ---
 
+<section class="mini-slider wow fadeIn" data-wow-duration="1s" data-wow-delay="0">
+    <h1>Notre formulaire de contact</h1>
+</section>
 <section class="one">
     <div class="container">
-
-        <div id="contact">
-            <h1>Contact</h1>
-
-
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <form method="post" id="contactForm" action="{{ site.data.company.url.notify }}">
-                        <input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
-                        <input type="hidden" name="type" value="contact" />
-                        <input type="hidden" name="website" value="{{ site.data.company.website }}" />
-                        <input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
-                        <input type="hidden" name="condition" value="on" />
-                        <input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
-
-                        <div class="form-group has-feedback">
-                            <label for="nom">Nom</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="NOM" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ville">Ville</label>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="Ville">
-
-                        </div>
-
-
-
-                        <div class="form-group has-feedback">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="text@exemple.fr" required>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label for="telephone">Téléphone</label>
-                            <input type="text" class="form-control" id="telephone" name="telephone"
-                                placeholder="06 00 00 00 00">
-                        </div>
-
-                        <div class="form-group has-feedback">
-                            <label for="objet">Objet</label>
-                            <select class="form-control" id="subject" name="subject" required>
-                                <option value="Demande d'information générale">Demande d'information générale</option>
-                                <option value="Demande d'information tarifaire">Demande d'information tarifaire</option>
-                                <option value="Proposition commerciale">Proposition commerciale</option>
-                                <option value="Recrutement">Recrutement</option>
-                                <option value="Autre">Autre</option>
-                            </select>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="6" placeholder="Votre message"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}">
-                            </div>
-                            <br />
-                            <div id="contact-form-response" class="text-white"
-                                style="color: #000 !important; font-size: 1rem;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2><strong>Contactez</strong> nous !</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="col-sm-6">
+                <form action="https://formspree.io/f/xvgawgje" method="POST">
+                    <div class="row form-contact">
+                        <div class="col-sm-6">
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control " id="lastname" name="nom" placeholder="Nom" required>
                             </div>
                         </div>
-
-                        <div class="text-center">
-                            <button type="submit" name="contact" class="button">Envoyer</button>
+                        <div class="col-sm-6">  
+                            <div class="form-group has-feedback">
+                                <input type="text" class="form-control " id="firstname" name="prenom" placeholder="Prénom" required>
+                            </div>
                         </div>
-                    </form>
-                </div>
+                        <div class="col-sm-12">
+                            <div class="form-group has-feedback">
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Téléphone" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group has-feedback">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group has-feedback">
+                                <textarea class="form-control" rows="6" name="message" id="message" placeholder="Message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group has-feedback group-rgpd">
+                                <div class="checkbox info-rgpd" style="margin-top: 0;">
+                                    <input type="checkbox" class="check-rgpd" name="rgpd" id="rgpd" required>
+                                    <label for="rgpd">En utilisant ce formulaire, vous acceptez le stockage et la gestion de vos données par ce site *</label>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback pseudoForm">
+                                <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudonyme">
+                            </div>
+                            <div class="buttondevis text-center">
+                                <button type="submit" name="contact" class="button2 btn-form">
+                                    <span class='txt'>Envoyer</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                {% include contact-info.html %}
             </div>
         </div>
     </div>
