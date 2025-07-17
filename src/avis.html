@@ -12,7 +12,7 @@ vous remercie pour le temps que vous y accordez"
 
 <section class="one">
     <div class="container">
-        <form class="" method="POST" action="" role="form">
+        <form class="" method="POST" role="form" id="avisForm">
             <div class="form">
                 <label class="control-label">Nom</label><br>
                 <input type="texte" class="form-control" name="nom" placeholder="Nom">
@@ -76,3 +76,19 @@ vous remercie pour le temps que vous y accordez"
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('avisForm');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Empêche l'envoi normal du formulaire
+        
+        // Ici vous pouvez ajouter du code pour traiter les données si nécessaire
+        // Par exemple, afficher un message de confirmation
+        
+        // Recharge la page
+        window.location.reload();
+    });
+});
+</script>

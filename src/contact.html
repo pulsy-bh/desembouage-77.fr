@@ -2,7 +2,8 @@
 layout: default
 permalink: /contact
 title: "Contactez SPC 77 par mail, sur notre numéro ou directement en agence"
-description: "Contactez-nous directement via notre formulaire de contact en ligne ou au 06 03 69 37 03. Notre équipe vous répondra rapidement pour analyser votre besoin."
+description: "Contactez-nous directement via notre formulaire de contact en ligne ou au 06 03 69 37 03. Notre équipe
+vous répondra rapidement pour analyser votre besoin."
 ---
 
 <section class="mini-slider wow fadeIn" data-wow-duration="1s" data-wow-delay="0">
@@ -16,43 +17,64 @@ description: "Contactez-nous directement via notre formulaire de contact en lign
                 <div class="separator"></div>
             </div>
             <div class="col-sm-6">
-                <form action="https://formspree.io/f/xvgawgje" method="POST">
+                <form id="contactForm" method="post" action="{{ site.data.company.url.notify }}">
+                    <input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
+                    <input type="hidden" name="type" value="contact" />
+                    <input type="hidden" name="website" value="{{ site.data.company.website }}" />
+                    <input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+                    <input type="hidden" name="firstName" value="" />
+                    <input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}" />
                     <div class="row form-contact">
                         <div class="col-sm-6">
                             <div class="form-group has-feedback">
-                                <input type="text" class="form-control " id="lastname" name="nom" placeholder="Nom" required>
+                                <input type="text" class="form-control " id="name" name="name" placeholder="Nom"
+                                    required>
                             </div>
                         </div>
-                        <div class="col-sm-6">  
+                        <div class="col-sm-6">
                             <div class="form-group has-feedback">
-                                <input type="text" class="form-control " id="firstname" name="prenom" placeholder="Prénom" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group has-feedback">
-                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Téléphone" required>
+                                <input type="text" class="form-control " id="lastname" name="lastname"
+                                    placeholder="Prénom" required>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group has-feedback">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Téléphone"
+                                    required>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group has-feedback">
-                                <textarea class="form-control" rows="6" name="message" id="message" placeholder="Message" required></textarea>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group has-feedback">
+                                <textarea class="form-control" rows="6" name="message" id="message"
+                                    placeholder="Message" required></textarea>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group has-feedback group-rgpd">
                                 <div class="checkbox info-rgpd" style="margin-top: 0;">
-                                    <input type="checkbox" class="check-rgpd" name="rgpd" id="rgpd" required>
-                                    <label for="rgpd">En utilisant ce formulaire, vous acceptez le stockage et la gestion de vos données par ce site *</label>
+                                    <input type="checkbox" class="check-rgpd" name="condition" id="condition" required>
+                                    <label for="condition">En utilisant ce formulaire, vous acceptez le stockage et la
+                                        gestion de vos données par ce site *</label>
                                 </div>
                             </div>
-                            <div class="form-group has-feedback pseudoForm">
-                                <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudonyme">
+
+                            <div class="" style="display: flex; justify-content: center; padding: 5px;">
+                                <div id="contact-form-response"></div>
+                                <div class="form-group d-flex justify-content-center">
+                                    <div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client}}">
+                                    </div>
+                                    <br />
+                                    <input style="display: none" type="submit" value="Submit"
+                                        class="wpcf7-wpcf7-submit" />
+                                </div>
                             </div>
+
                             <div class="buttondevis text-center">
                                 <button type="submit" name="contact" class="button2 btn-form">
                                     <span class='txt'>Envoyer</span>

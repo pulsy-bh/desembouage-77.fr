@@ -2,33 +2,41 @@
 layout: default
 permalink: /devis
 title: "Devis gratuits avec SPC Désembouage 77 06 03 69 37 03"
-description: "Demandez votre devis détaillé directement en ligne pour estimer le coût de votre intervention. SPC intervient chez les particuliers et professionnels."
+description: "Demandez votre devis détaillé directement en ligne pour estimer le coût de votre intervention. SPC
+intervient chez les particuliers et professionnels."
 ---
 
 <section class="mini-slider wow fadeIn" data-wow-duration="1s" data-wow-delay="0">
-    <h1>Devis gratuit</h1>
-  </section>
-  <section class="one">
-    <div class="container">
-      <div id="devis" class="bgform">
-        <div class="row">
-          <div class="col-sm-12">
-            <h2>Demandez un <strong>devis</strong></h2>
-            <br><br>
-          </div>
-          <div class="col-sm-6">
-            <form action="https://formspree.io/f/xkgrqgll" method="POST">
+  <h1>Devis gratuit</h1>
+</section>
+<section class="one">
+  <div class="container">
+    <div id="devis" class="bgform">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Demandez un <strong>devis</strong></h2>
+          <br><br>
+        </div>
+        <div class="col-sm-6">
+          <form id="devisForm" method="post" action="{{ site.data.company.url.notify }}">
+            <input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
+            <input type="hidden" name="type" value="devis" />
+            <input type="hidden" name="website" value="{{ site.data.company.website }}" />
+            <input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+            <input type="hidden" name="firstName" value="" />
+            <input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}" />
             <div class="row">
               <div class="col-sm-12">
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group has-feedback">
-                      <input type="text" class="form-control" id="firstname" name="prenom" placeholder="Prénom" required>
+                      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Prenom"
+                        required>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group has-feedback">
-                      <input type="text" class="form-control" id="lastname" name="nom" placeholder="Nom" required>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Nom" required>
                     </div>
                   </div>
                 </div>
@@ -64,18 +72,19 @@ description: "Demandez votre devis détaillé directement en ligne pour estimer 
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group has-feedback">
-                     <select name="subject" class="form-control" id="subject">
+                      <select name="subject" class="form-control" id="subject">
                         <option value="Prestation:">Prestation:</option>
                         <option value="Désembouage de radiateurs">Désembouage de radiateurs</option>
                         <option value="Désembouage de plancher chauffant">Désembouage de plancher chauffant</option>
-                     </select>
+                      </select>
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group has-feedback">
-                      <textarea rows="6" name="message" placeholder="Message" class="form-control" id="message"></textarea>
+                      <textarea rows="6" name="message" placeholder="Message" class="form-control"
+                        id="message"></textarea>
                     </div>
                   </div>
                 </div>
@@ -83,24 +92,34 @@ description: "Demandez votre devis détaillé directement en ligne pour estimer 
             </div>
             <div class="form-group has-feedback group-rgpd">
               <div class="checkbox info-rgpd">
-                <input type="checkbox" class="check-rgpd" name="rgpd" id="rgpd" required>
-                <label for="rgpd">En utilisant ce formulaire, vous acceptez le stockage et la gestion de vos données par ce site *</label>
+                <input type="checkbox" class="check-rgpd" name="condition" id="condition" required>
+                <label for="condition">En utilisant ce formulaire, vous acceptez le stockage et la gestion de vos
+                  données par
+                  ce site *</label>
               </div>
             </div>
-            <div class="form-group has-feedback pseudoForm">
-              <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudonyme">
+
+            <div class="" style="display: flex; justify-content: center; padding: 5px;">
+              <div id="devis-form-response"></div>
+              <div class="form-group d-flex justify-content-center">
+                <div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client}}">
+                </div>
+                <br />
+                <input style="display: none" type="submit" value="Submit" class="wpcf7-wpcf7-submit" />
+              </div>
             </div>
+
             <div class="buttondevis text-center">
               <button type="submit" name="devis" value="envoyer" class="button2 btn-form success">
                 <span class='txt'>Envoyer</span>
               </button>
             </div>
-            </form>
-          </div>
-          <div class="col-sm-6">
-            {% include contact-info.html %}
-          </div>
+          </form>
+        </div>
+        <div class="col-sm-6">
+          {% include contact-info.html %}
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
