@@ -1,44 +1,32 @@
 <form method="post" id="contactForm" action="{{ site.data.company.url.notify }}">
-  <input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
-  <input type="hidden" name="type" value="contact" />
-  <input type="hidden" name="website" value="{{ site.data.company.website }}" />
-  <input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
-  <input type="hidden" name="condition" value="on" />
-  <input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control " id="name" name="name" value="" placeholder="Nom" required>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control " id="email" name="email" value="" placeholder="E-mail" required>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control " id="telephone" name="telephone" value="" placeholder="Téléphone">
+        <input type="text" class="form-control " id="lastname" name="lastname" placeholder="Nom">
       </div>
     </div>
     <div class="col-sm-12">
       <div class="form-group has-feedback">
-        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Message"></textarea>
+        <input type="text" class="form-control " id="email" name="email" placeholder="E-mail">
       </div>
     </div>
-    <div class="col-sm-12 text-center">
-      <div class="form-group">
-        <div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}">
-        </div>
-        <br />
-        <div id="contact-form-response" class="text-white" style="color: #000 !important; font-size: 1rem;">
-        </div>
+    <div class="col-sm-12">
+      <div class="form-group has-feedback">
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Téléphone">
       </div>
     </div>
-
+    <div class='col-sm-12'>
+      <div class="form-group has-feedback">
+        <textarea rows="6" name="message" class="form-control" id="message" placeholder='Message'></textarea>
+      </div>
+    </div>
   </div>
+  <div class="div01"></div>
   <div class="row ">
-    <div class="col-xs-12 ">
-      <button type='submit' name="precontact" class="btn button"> Envoyer </button>
+    <div class="col-xs-12 text-center">
+      <button type='submit' name="precontact" class="button1">
+        <span class='txt'>Envoyer</span>
+      </button>
     </div>
+  </div>
   </div>

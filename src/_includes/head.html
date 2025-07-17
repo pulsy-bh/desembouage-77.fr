@@ -1,75 +1,22 @@
 <head>
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ site.baseurl }}/assets/img/star-of-life.png" type="image/x-icon" />
-
-    
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Lato:400,700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="{{site.baseurl}}/assets/css/style.css"> -->
-    <!-- <link rel="icon" href="{{site.baseurl}}/assets/img/favicon.png" type="image/x-icon" /> -->
-    <script defer src="{{site.baseurl}}/assets/js/jquery-3.3.1.slim.min.js"></script>
-    <script defer src="{{site.baseurl}}/assets/js/popper.min.js"></script>
-    <script defer src="{{site.baseurl}}/assets/js/bootstrap.min.js"></script>
-    {% include head-seo.html %}
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156100858-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-156100858-1');
-    </script>
-    <script type='application/ld+json'> 
-    {
-        "@context": "http://www.schema.org",
-        "@type": "Service d'urgence",
-        "name": "Le meilleur service d'ambulance dans le 94 | 01 85 53 70 44",
-        "url": "https://www.ambulance-94.com/",
-        "logo": "https://www.ambulance-94.com/img/logo.jpg",
-        "image": "https://www.ambulance-94.com/img/ambulance_vitry.jpg",
-        "description": "Notre entreprise spécialisée dans les services ambulanciers dans le 94 est à votre disposition pour tout transport sanitaire que ce soit en urgence ou non. Qu'il s'agisse d'une consultation médicale, d'un transport opérationnel ou d'une prise en charge, nos ambulanciers est prête à vous aider pour tous vos besoins.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "80 rue Charles Fourier",
-            "addressLocality": "Vitry Sur Seine",
-            "addressRegion": "Ile-de-France",
-            "postalCode": "94400",
-            "addressCountry": "France"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "48.80°N",
-            "longitude": "2.40°E"
-        },
-        "openingHours": "Mo, Tu, We, Th, Fr, Sa, Su 01:00-23:30",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "01 85 53 70 44",
-            "contactType": "téléphone"
-        }
-    }
-    </script>
-
-    <title>{{ page.title | default: site.title }}</title>
-    <meta name="description" content="{{ page.description | default: site.description }}" />
-    <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.ico" type="image/x-icon" />
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
+    <meta name="keywords" content="{{ site.keywords }}" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/global.css">
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/bxslider.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/clockpicker.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/less/bootstrap.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90209023-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,700&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700" rel="stylesheet">
-
-    <meta property="og:image" content="https://www.ambulance-94.com/img/ambulance_vitry.jpg"/>
+        gtag('config', 'UA-90209023-1');
+    </script>
 </head>

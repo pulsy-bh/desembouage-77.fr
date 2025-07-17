@@ -1,157 +1,144 @@
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 <script src="{{ site.baseurl }}/assets/js/jquery-1.11.0.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
 <script src="https://use.fontawesome.com/24b7f338c4.js"></script>
-<script src="{{ site.baseurl }}/assets/js/formSubmit.js"></script>
+<script src="{{ site.baseurl }}/assets/js/wow.min.js" type="text/javascript"></script>
+<script src="{{ site.baseurl }}/assets/js/owl.carousel.min.js" type="text/javascript"></script>
 
+<div id='fb-root'></div>
+<script>(function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = '//connect.facebook.net/fr_FR/all.js#xfbml=1'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+<script
+	type='text/javascript'>window.___gcfg = { lang: 'fr' }; (function () { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/platform.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();</script>
 
-{% if page.url == '/devis/' or page.url == '/' %}
-	<script src="{{ site.baseurl }}/assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
-  	<script src="{{ site.baseurl }}/assets/js/clockpicker.js" type="text/javascript"></script>
-	<script src="{{ site.baseurl }}/assets/js/datepicker-locales/bootstrap-datepicker.fr.js" type="text/javascript"></script>
-	<script>
-		$(document).ready(function() {
-			$('.bootstrap-datepicker input').datepicker({
-				todayBtn: "linked",
-				language: "fr",
-				autoclose: true,
-				todayHighlight: true
-			});
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		var $lightbox = $('#lightbox');
+
+		$('[data-target="#lightbox"]').on('click', function (event) {
+			var $img = $(this).find('img'),
+				src = $img.attr('src'),
+				alt = $img.attr('alt'),
+				css = {
+					'maxWidth': $(window).width() - 100,
+					'maxHeight': $(window).height() - 100
+				};
+
+			$lightbox.find('.close').addClass('hidden');
+			$lightbox.find('img').attr('src', src);
+			$lightbox.find('img').attr('alt', alt);
+			$lightbox.find('img').css(css);
 		});
-	</script>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.clockpicker').clockpicker({
-				autoclose: true
-			});
+		$lightbox.on('shown.bs.modal', function (e) {
+			var $img = $lightbox.find('img');
+
+			$lightbox.find('.modal-dialog').css({ 'width': $img.width() });
+			$lightbox.find('.close').removeClass('hidden');
 		});
-	</script>
-{% endif %}
+	});
 
-{% if page.url == '/galerie/' or page.url contains '/album-' or page.url contains '/product-' %}
-	<script src="{{ site.baseurl }}/assets/js/lightbox-2.6.min.js" type="text/javascript"></script>
-{% endif %}
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127176750-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-127176750-1');
 </script>
 
-{% if page.facebook %}
-	<div id='fb-root'></div>
-	<script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = '//connect.facebook.net/fr_FR/all.js#xfbml=1';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
-{% endif %}
-
-{% if page.twitter %}
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script>
-{% endif %}
-
-{% if page.google_plus %}
-	<script type='text/javascript'>
-		window.___gcfg = {lang: 'fr'};
-		(function() {
-			var po = document.createElement('script');
-			po.type = 'text/javascript';
-			po.async = true;
-			po.src = 'https://apis.google.com/js/platform.js';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(po, s);
-		})();
-	</script>
-{% endif %}
-
-<script type="text/javascript" src="{{ site.baseurl }}/assets/js/bxslider.min.js"></script>
 <script type="text/javascript">
-	// Utilisation de l'API MediaQueryList moderne
-	if (window.matchMedia) {
-		const mq = window.matchMedia("(min-width: 768px)");
-		mq.addEventListener('change', handleWidthChange);
-		handleWidthChange(mq);
-	}
+	var conf_name = "{{ site.data.company.name }}";
+	var conf_email = "{{ site.data.company.email }}";
+	var modal_rgpd = '<div class="modal fade" id="modal-rgpd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' +
+		'        <div class="modal-dialog" role="document">' +
+		'            <div class="modal-content">' +
+		'                <div class="modal-body">' +
+		'                  * En cochant cette case, j’accepte que mes données personnelles soient collectées et traitées par le service commercial de ' + conf_name + '.' +
+		'                   Leur traitement a pour finalité de traiter votre demande spécifique.<br>' +
+		'                   Les données collectées sont conservées pour la durée de nos relations commerciales + 1 an. Conformément à la loi' +
+		'                   « informatique et libertés », vous pouvez exercer votre droit d’accès aux données vous concernant et les faire rectifier' +
+		'                   auprès de notre référent à <a href="mailto:"' + conf_email + '">' + conf_email + '</a>.<br>' +
+		'                   Vous disposez également d’un droit de rectification, à l’oubli, à la portabilité, de limitation ou d’opposition auprès de notre référent à ' +
+		'                   <a href="mailto:' + conf_email + '">' + conf_email + '</a>.<br><br>' +
+		'                   En dernier recours, vous pouvez déposer une réclamation auprès de la CNIL.' +
+		'                </div>' +
+		'                <div class="modal-footer">' +
+		'                    <div class="form-group text-center">' +
+		'                        <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Fermer</button>' +
+		'                    </div>' +
+		'                </div>' +
+		'            </div>' +
+		'        </div>' +
+		'    </div>';
+	$(document).ready(function () {
+		$(".info-rgpd label").after(function () {
+			return '&nbsp;<a href="#" data-toggle="modal" data-target="#modal-rgpd"><i class="fa fa-info-circle"></i></a>' + modal_rgpd;
+		});
+	});
+</script>
 
-	function handleWidthChange(mq) {
-		if (mq.matches) {
-			$(document).ready(function() {
-				$('.bxslider').bxSlider({
-					minSlides: 1,
-					auto: true,
-					speed: 1800,
-					pause: 5000,
-					maxSlides: 1,
-					slideMargin: 10
-				});
-			});
+<script>
+	new WOW().init();
+</script>
+
+<script type="text/javascript">
+	$(window).scroll(function () {
+		if ($(document).scrollTop() > 350) {
+			$(".backTotop").addClass('active1');
+			$(".phone-fix").addClass('show');
+		} else {
+			$(".backTotop").removeClass('active1');
+			$(".phone-fix").removeClass('show');
+		}
+	});
+
+	$('a[href^="#backTotop"]').click(function () {
+		var the_id = $(this).attr("href");
+
+		$('html, body').animate({
+			scrollTop: $(the_id).offset().top
+		}, 'slow');
+		return false;
+	});
+</script>
+<script src="{{ site.baseurl }}/assets/js/waypoints.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/jquery.counterup.min.js"></script>
+<script type="text/javascript">
+	$('.count').counterUp({
+		delay: 10,
+		time: 2000
+	});
+</script>
+
+<script>
+	window.onscroll = function () { myFunction() };
+	var header = document.getElementById("menu2");
+	var sticky = header.offsetTop;
+
+	function myFunction() {
+		if (window.pageYOffset > sticky) {
+			header.classList.add("fixmenu");
+
+		} else {
+			header.classList.remove("fixmenu");
 		}
 	}
 </script>
 
-<script type="text/javascript">
-	// Optimisation de la gestion du scroll avec debounce
-	let scrollTimeout;
-	$(window).on('scroll', function() {
-		clearTimeout(scrollTimeout);
-		scrollTimeout = setTimeout(function() {
-			const scrollTop = $(document).scrollTop();
-			const menu = $(".menu");
-			
-			if (scrollTop > 40) {
-				menu.addClass('fixmenu');
-			} else {
-				menu.removeClass('fixmenu');
+<script>
+	$('.carousel1').owlCarousel({
+		loop: true,
+		margin: 10,
+		nav: false,
+		dots: true,
+		autoplay: true,
+		autoplayTimeout: 7000,
+		smartSpeed: 3000,
+		autoplayHoverPause: false,
+		responsive: {
+			0: {
+				items: 1
+			},
+			600: {
+				items: 1
+			},
+			1000: {
+				items: 1
 			}
-		}, 10);
-	});
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		const $lightbox = $('#lightbox');
-		
-		$('[data-target="#lightbox"]').on('click', function(event) {
-			const $img = $(this).find('img');
-			const src = $img.attr('src');
-			const alt = $img.attr('alt');
-			const css = {
-				'maxWidth': $(window).width() - 100,
-				'maxHeight': $(window).height() - 100
-			};
-		
-			$lightbox.find('.close').addClass('hidden');
-			$lightbox.find('img')
-				.attr('src', src)
-				.attr('alt', alt)
-				.css(css);
-		});
-		
-		$lightbox.on('shown.bs.modal', function() {
-			const $img = $lightbox.find('img');
-			$lightbox.find('.modal-dialog').css({'width': $img.width()});
-			$lightbox.find('.close').removeClass('hidden');
-		});
-	});
-</script>
-
-<script type="text/javascript">
-	// Optimisation de la gestion du scroll pour le téléphone fixe
-	let phoneScrollTimeout;
-	$(window).on('scroll', function() {
-		clearTimeout(phoneScrollTimeout);
-		phoneScrollTimeout = setTimeout(function() {
-			const scrollTop = $(document).scrollTop();
-			const $fixphone = $("#fixphone");
-			
-			if (scrollTop > 40) {
-				$fixphone.slideDown(300);
-			} else {
-				$fixphone.slideUp(300);
-			}
-		}, 10);
-	});
+		}
+	})
 </script>

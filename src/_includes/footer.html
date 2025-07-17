@@ -1,32 +1,53 @@
-<footer id="pre-contact">
+<footer>
 	<div class="container">
+		<div class="row contact-info2">
+			<div class="col-sm-3 text-left">
+				<h3>Téléphone:</h3>
+				<p><i class="fa fa-phone"></i><a href="tel:{{ site.data.company.phone1 }}">{{ site.data.company.phone1
+						}}</a></p>
+			</div>
+			<div class="col-sm-9 text-left">
+				<h3>Adresse:</h3>
+				<p><i class="fa fa-map-o"></i>{{ site.data.company.address }} {{ site.data.company.zipCode }} {{
+					site.data.company.city }}</p>
+			</div>
+		</div>
+		<div class="separator"></div>
 		<div class="row">
-			<div class="col-sm-4">
-				<p><strong>Action Ambulance </strong></p>
-				<p>Action Ambulance propose des véhicules sanitaires aux normes et de qualité pour le confort et le bien-être des personnes souffrantes dans tout le Val-de-Marne et dans toute l’Île-de-France. Nos ambulanciers certifiés surveillent votre état de santé durant le transport vers l’établissement hospitalier en vous prodiguant les soins et les réanimations nécessaires à votre état de santé depuis quelques années.</p>
-				
+			<div class="col-sm-4 text-left">
+				<h2>Desembouage 77</h2>
+				<p>SPC vous propose son service Désembouage 77 comme solution rapide et efficace au problème d’embouage
+					dans la Seine-et-Marne. Nous intervenons aussi bien chez les particuliers que chez les
+					professionnels, et ce, dans les plus courts délais.</p>
+				<br>
 			</div>
-
-			<div class="col-sm-4">
-				<p><strong>Contactez-nous </strong></p>
-				 {% include pre-contact.html %}
+			<div class="col-sm-4 text-left">
+				<h2>Liens utiles</h2>
+				<ul class="list2">
+					<li><a href="{{ site.baseurl }}/">Accueil</a> </li>
+					<li><a href="{{ site.baseurl }}/desembouage-seine-et-marne">Désembouage Seine-et-Marne</a></li>
+					<li><a href="{{ site.baseurl }}/desembouage-maison-77">Désembouage maison 77</a></li>
+					<li><a href="{{ site.baseurl }}/tarifs">Nos tarifs</a></li>
+					<li><a href="{{ site.baseurl }}/entreprise">Notre entreprise</a></li>
+					<li><a href="{{ site.baseurl }}/avis">Avis</a></li>
+					<li><a href="{{ site.baseurl }}/devis">Devis en ligne</a></li>
+					<li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+				</ul>
 			</div>
-			<div class="col-sm-4">
-				<p><strong>Nos coordonnées</strong></p>
-				<p>Adresse : {{ site.data.company.streetAddress }} {{ site.data.company.postalCode }} {{ site.data.company.addressLocality }}</p>
-				<p>Téléphone : <a href="tel:{{ site.data.company.phone1 }}"> {{ site.data.company.phone1 }}</a></p>
-				<p>E-mail :<a href="mailto:{{ site.data.company.email }}"> {{ site.data.company.email }}</a> </p>
-				<p>Nos horaires : 7J/7 – 24H/24 </p>
+			<div class="col-sm-4 text-left">
+				<h2>Votre désembouage en Essonne</h2>
+				<p>N'hésitez pas à nous contacter par mail.</p>
+				<p>Mail: <a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a></p>
+				<br>
 				<ul class="social">
-					<li><a href="#"  class="fa fa-facebook"></a></li>
-					<li><a href="#"  class="fa fa-twitter"></a></li>
-					<li><a href="#"  class="fa fa-google-plus"></a></li>
+					<li><a href="{{ site.data.company.facebook }}" target="_blank"><span
+								class="fa fa-facebook fa-fw"></span></a></li>
 				</ul>
 			</div>
 		</div>
-		<div class="pad02"></div>
-		<div class="text-center">
-			<a href="https://www.bhinternet.fr/" target="_blank">BHInternet - Création site internet | {{ site.time | date: '%Y' }}</a> | <a href="/ambulance-vitry">Ambulance Vitry</a>
-		</div>
 	</div>
 </footer>
+<div class="text-center" id="bhinternet">
+	<a href="https://www.bhinternet.fr/" target="_blank">BHInternet - Création site internet | 2025 | </a>
+	<a href="{{ site.baseurl }}/mentions-legales">Mentions légales</a>
+</div>
