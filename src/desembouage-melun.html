@@ -33,7 +33,7 @@ description: "Vous habitez Melun et vous voulez réaliser un désembouage ? Cont
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <img src="img/img5.jpg" class="img-responsive" alt="desembouage melun">
+          <img src="{{ site.baseurl }}/assets/img/img5.jpg" class="img-responsive" alt="desembouage melun">
         </div>
         <div class="col-sm-6">
           <h3>Pourquoi nous contacter ?</h3>
@@ -47,7 +47,7 @@ description: "Vous habitez Melun et vous voulez réaliser un désembouage ? Cont
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h2><b>CONTACTEZ-NOUS</b> AU <a href="tel:<?=$call_phone1?>" class="contact-phone"><?=$conf_phone1?></a></h2>
+          <h2><b>CONTACTEZ-NOUS</b> AU <a href="tel:{{ site.data.company.phone1 }}" class="contact-phone">{{ site.data.company.phone1 }}</a></h2>
         </div>
       </div>
     </div>
